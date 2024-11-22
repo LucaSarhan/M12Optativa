@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+
+    <!-- Pure three.js code that the A-Frame components use for location-based AR -->
+    <script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/3.4.5/three.js/build/ar-threex-location-only.js'></script>
+    
+    <!-- AR.js A-Frame components -->
+    <script type='text/javascript' src='https://raw.githack.com/AR-js-org/AR.js/3.4.5/aframe/build/aframe-ar.js'></script>
+    <title>Exemplo 01</title>
+</head>
+<body style="margin:0px; overflow: hidden;">
+    <a-scene vr-mode-ui="enabled: false" arjs="debugUIEnabled:false">
+
+        <a-assets>
+            <audio id="som" preload="auto" src="https://cdn.glitch.global/2b96ba94-ad61-4698-8eab-6f6795a25362/Gemidao.mpeg?v=1732024014758"></audio>
+            <video id="robo" src="https://cdn.glitch.global/2b96ba94-ad61-4698-8eab-6f6795a25362/robo.mp4?v=1732024023904" ></video>
+            <img id="sete" src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQuQujUPB_N3iAxckpTyvmpzvORygNQjL8cEKVj5rraFsuAInK-"> </img>
+        </a-assets>
+
+        <a-marker present="hiro" controlador>
+            <a-video width="1" height="1" rotation="-90 0 0" position="0 0 0" src="#robo"></a-video>
+            <a-entity sound="src: #som; autoplay:true; loop:true" ></a-entity>
+        </a-marker>
+
+        <a-entity camera="">
+
+        </a-entity>
+    </a-scene>
+
+    <script>
+        AFRAME.registerComponent(
+            'controlador', {
+                init: function(){
+                    this.toggle = false;
+                    this.vid=document.querySelector("#robo");
+                    this.vid.pause();
+                },
+                tick: function(){
+                    if (this.el.object3D.visible == true){
+                        if(!this.toggle){
+                            this.toggle = true;
+                            this.vid.play();
+                        }else{
+                            this.toggle = false;
+                            this.vid.pause();
+                        }
+                    }
+                }
+            }
+        );
+      </script>
+
+</body>
+</html>
