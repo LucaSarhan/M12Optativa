@@ -2,7 +2,9 @@
 
 O arquivo do personagem criado no metahuman está anexado nesse mesmo ambiente. O nome do arquivo é Pirlo.mhb.
 
-[Link](https://drive.google.com/file/d/1gk16bQhMswAPvfVXMjOhEhRGoj0rxjAT/view?usp=sharing) do audio gerado
+[Link](https://drive.google.com/file/d/1gk16bQhMswAPvfVXMjOhEhRGoj0rxjAT/view?usp=sharing) do audio gerado.
+
+[Link](https://drive.google.com/file/d/1-u_5FKbe1f0OVPQPKHzL4nmX4ZeMSXkO/view?usp=sharing) da imagem usada como base para o humano virtual.
 
 # Documentação da atividade
 
