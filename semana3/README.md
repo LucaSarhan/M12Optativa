@@ -4,7 +4,7 @@ Link dos assets:
 
 [dog minecraft](https://sketchfab.com/3d-models/wolf-dog-minecraft-9e35487f302545d49f9b5617564dae63)
 
-[japanese temple](https://sketchfab.com/3d-models/japanese-temple-e6ac76a9be4a4bc3ac92c9183c13fab9)
+[japanese temple](https://sketchffab.com/3d-models/japanese-temple-e6ac76a9be4a4bc3ac92c9183c13fab9)
 
 [turkey](https://sketchfab.com/3d-models/turkey-aa8e8bc39e8a45d1a881587430096967)
 
