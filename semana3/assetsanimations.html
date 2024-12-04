@@ -1,42 +1,84 @@
-<!-- Template Vazio - A-Frame -->
- <!-- Texturas de: https://texturelabs.org/ -->
 <html>
-    <head>
-      <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
-    </head>
-    <body>
-      <a-scene>
-          <!-- Gerenciamento de Assets do A-Frame -->
-           <a-assets>
-            <!-- Fundo -->
-            <img id="fundo" src="./texturas/pexels-francesco-ungaro-281260.jpg" />
-            <img id="chao" src="./texturas/Texturelabs_Stone_168L.jpg"/>
-            <a-asset-item id="apartamento-obj" src="./assets/Apartment 2/model.obj"></a-asset-item>
-            <a-asset-item id="apartamento-mtl" src="./assets/Apartment 2/materials.mtl"></a-asset-item>
-            <a-asset-item id="personagem" src="./assets/City Pack.undefined-glb/Adventurer.glb"></a-asset-item>
-            <a-asset-item id="enderman" src="./assets/enderman/scene.gltf"></a-asset-item>
-           </a-assets>
+<head>
+  <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+</head>
+<body>
+  <a-scene>
+    <!-- Gerenciamento de Assets do A-Frame -->
+    <a-assets>
+      <!-- Fundo -->
+      <img id="fundo" src="./texturas/pexels-francesco-ungaro-281260.jpg" />
+      <img id="chao" src="./texturas/Texturelabs_Stone_168L.jpg" />
+      <a-asset-item id="apartamento-obj" src="./assets/Apartment 2/model.obj"></a-asset-item>
+      <a-asset-item id="apartamento-mtl" src="./assets/Apartment 2/materials.mtl"></a-asset-item>
+      <a-asset-item id="personagem" src="./assets/City Pack.undefined-glb/Adventurer.glb"></a-asset-item>
+      <a-asset-item id="enderman" src="./assets/enderman/scene.gltf"></a-asset-item>
+      <a-asset-item id="minecraft_world" src="./assets/minecraft_world/scene.gltf"></a-asset-item>
+    </a-assets>
 
-           <a-sky src="#fundo"></a-sky>
+    <a-sky src="#fundo"></a-sky>
 
-         <a-plane
-                material="src:#chao"
-                rotation="-90 0 0"
-                repeat="5 5"
-                scale="10 10 1">
-         </a-plane>
-         <a-entity position="0 0 8" rotation="0 0 0">
-            <a-entity position="0 1 5">
-                <a-camera fov="120"></a-camera>
-              </a-entity>
-         </a-entity>
+    <a-plane
+      material="src:#chao"
+      rotation="-90 0 0"
+      repeat="5 5"
+      scale="10 10 1">
+    </a-plane>
 
-         <a-entity 
-            gltf-model="#enderman" 
-            position="0 0 3" 
-            scale="0.25 0.25 0.25"
-            animation="property: position; to: 0 0 10; dur: 5000; easing: linear; loop: true;">
-        </a-entity>     
-      </a-scene>
-    </body>
+    <a-entity position="0 0 8" rotation="0 0 0">
+      <a-entity position="0 1 5">
+        <a-camera fov="120"></a-camera>
+      </a-entity>
+    </a-entity>
+
+    <a-entity
+      id="enderman-entity"
+      gltf-model="#enderman"
+      position="0 0 3"
+      scale="0.25 0.25 0.25"
+      animation="property: position; to: 0 0 10; dur: 5000; easing: linear; loop: false;">
+    </a-entity>
+  </a-scene>
+  <script>
+    // Wait for the scene to load
+    document.querySelector('a-scene').addEventListener('loaded', function () {
+      // Select the Enderman entity
+      const endermanEntity = document.querySelector('#enderman-entity');
+  
+      // Add a general event listener for debugging
+      endermanEntity.addEventListener('animationcomplete', function (event) {
+        console.log('Animation complete event fired:', event.detail);
+        // Get the A-Frame scene
+        const scene = document.querySelector('a-scene');
+
+        // Remove all existing children from the scene
+        while (scene.firstChild) {
+          scene.removeChild(scene.firstChild);
+        }
+
+        // Add the Minecraft world
+        const minecraftWorld = document.createElement('a-entity');
+        minecraftWorld.setAttribute('gltf-model', '#minecraft_world');
+        minecraftWorld.setAttribute('position', '0 0 0');
+        minecraftWorld.setAttribute('scale', '0.5 0.5 0.5');
+        
+        scene.appendChild(minecraftWorld);
+
+        console.log('Minecraft scene loaded.');
+      });
+  
+      // Add a general listener for all events on the Enderman
+      endermanEntity.addEventListener('animationbegin', function () {
+        console.log('Animation began.');
+      });
+  
+      // Check if the entity has animations
+      if (!endermanEntity.components.animation) {
+        console.error('No animation component found on the Enderman entity.');
+      } else {
+        console.log('Animation component found:', endermanEntity.components.animation);
+      }
+    });
+  </script>  
+</body>
 </html>

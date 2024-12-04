@@ -9,3 +9,5 @@ Link dos assets:
 [turkey](https://sketchfab.com/3d-models/turkey-aa8e8bc39e8a45d1a881587430096967)
 
 [enderman](https://sketchfab.com/3d-models/minecraft-enderman-216552744553461d960dd0cdf3a0592a)
+
+[minecraft world](https://sketchfab.com/3d-models/minecraft-world-8ee90583b45749c387a9c45e95031cd1)
