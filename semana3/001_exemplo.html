@@ -1,0 +1,76 @@
+<head>
+    <title>Most Basic Super-Hands Example</title>
+    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.misc.min.js"></script>
+    <script src="https://unpkg.com/super-hands@^3.0.3/dist/super-hands.min.js"></script>
+</head>
+  
+  <body>
+    <a-scene>
+        <a-assets>
+            <img id="chao" src="./texturas/Texturelabs_Stone_168L.jpg"/>
+            <a-asset-item id="game_machine" src="./assets/elementos/Electronic Game.glb"></a-asset-item>
+            <audio id="musical1" src="./assets/elementos/Jingle Bells - The Soundlings.mp3"> </audio>
+            <audio id="musical2" src="./assets/elementos/Silent Night - The Soundlings.mp3"> </audio>
+            <audio id="musical3" src="./assets/elementos/Where'd the Sun Go_ - Ryan McCaffrey_Go By Ocean.mp3"> </audio>
+            <img id="charmander" src="./assets/elementos/charmander.png"> </img>
+            <img id="squirtle" src="./assets/elementos/squirtle.png"> </img>
+            <img id="bulbasaur" src="./assets/elementos/bulbasaur.png"> </img>
+        </a-assets>
+        <a-entity>
+            <a-camera></a-camera>
+            <a-entity sphere-collider="objects: a-box" super-hands hand-controls="hand: left"></a-entity>
+            <a-entity sphere-collider="objects: a-box" super-hands hand-controls="hand: right"></a-entity>
+        </a-entity>
+      <!-- hover & drag-drop won't have any obvious effect without some additional event handlers or components. See the examples page for more -->
+        <a-sky color="c3"> </a-sky>
+        <a-plane
+            material="src:#chao"
+            rotation="-90 0 0"
+            repeat="5 5"
+            scale="10 10 1">
+        </a-plane>
+        <a-entity
+            gltf-model="#game_machine"
+            scale="1.5 1.5 1.5"
+            position="-0.5 0 -2"
+            rotation="0 0 0">
+        </a-entity>
+        <a-cylinder 
+            scale="0.06033 0.06033 0.06033" 
+            position="-0.01432 0.92107 -0.86627" 
+            rotation="29.999999999999996 0 0" 
+            color="green" 
+            height="1" 
+            radius="1.5" 
+            material="" 
+            geometry="">
+        </a-cylinder>
+        <a-cylinder 
+            scale="0.08 0.08 0.08" 
+            position="0.18155 0.99669 -0.91508" 
+            rotation="29.999999999999996 0 0" 
+            color="blue" 
+            height="1" 
+            radius="1.5" 
+            material="" 
+            geometry="">
+        </a-cylinder>
+        <a-cylinder 
+            scale="0.08 0.08 0.08" 
+            position="0.4262 0.9854 -1.00436" 
+            rotation="29.999999999999996 0 0"
+            color="crimson" 
+            height="1" 
+            radius="1.5" 
+            material="" 
+            geometry="">
+        </a-cylinder>
+        <a-image 
+            id="display" 
+            src="#charmander" 
+            position="0.103 1.763 -1.340" 
+            rotation="-19.5 0 0">
+        </a-image>
+    </a-scene>
+  </body>
