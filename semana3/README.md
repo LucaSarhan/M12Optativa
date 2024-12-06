@@ -4,10 +4,12 @@ Link dos assets:
 
 [dog minecraft](https://sketchfab.com/3d-models/wolf-dog-minecraft-9e35487f302545d49f9b5617564dae63)
 
-[japanese temple](https://sketchffab.com/3d-models/japanese-temple-e6ac76a9be4a4bc3ac92c9183c13fab9)
-
-[turkey](https://sketchfab.com/3d-models/turkey-aa8e8bc39e8a45d1a881587430096967)
+[minecraft villager](https://sketchfab.com/3d-models/minecraft-villager-905c2547478f4bc9b4a8a1521966ab81#download)
 
 [enderman](https://sketchfab.com/3d-models/minecraft-enderman-216552744553461d960dd0cdf3a0592a)
 
 [minecraft world](https://sketchfab.com/3d-models/minecraft-world-8ee90583b45749c387a9c45e95031cd1)
+
+# Experiência
+
+A experiência funciona da seguinte maneira: um Enderman aparece em uma tela preta e se movimenta, aproximando-se da tela. Em seguida, o usuário precisa posicionar o cursor sobre o botão vermelho que aparecerá e clicar. Após o clique, um mundo do Minecraft será exibido, onde um cachorro, um gorila e um Villager se aproximarão da tela.
